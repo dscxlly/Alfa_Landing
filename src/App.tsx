@@ -54,16 +54,18 @@ function App() {
                   name='nome' 
                   placeholder='Nome*' 
                   type='text'
+                  required
                   className='m-2 p-4 rounded-md'
                 />
                 <input
                   name='whatsapp' 
                   placeholder='Whatsapp*' 
                   type='tel'
+                  required
                   className='m-2 p-4 rounded-md'
                 />
                 <SelectComp />
-                <button className='bg-red-700 py-4 rounded-lg text-white uppercase font-extrabold px-14 m-5 hover:animate-spin shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50 hover:scale-[1.03]'>quero proteger meu veículo</button>
+                <button type='submit' className='bg-red-700 py-4 rounded-lg text-white uppercase font-extrabold px-14 m-5 hover:animate-spin shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50 hover:scale-[1.03]'>quero proteger meu veículo</button>
               </form>
             </div>
           </div>
@@ -93,7 +95,7 @@ function App() {
             </div>
           </div>
           <div>
-            <button className='bg-red-700 py-4 rounded-lg text-white uppercase font-extrabold px-14 m-5 hover:animate-spin shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50 hover:scale-[1.03]'>quero proteger meu veículo</button>
+            <button type='submit' className='bg-red-700 py-4 rounded-lg text-white uppercase font-extrabold px-14 m-5 hover:animate-spin shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50 hover:scale-[1.03]'>quero proteger meu veículo</button>
           </div>
         </div>
       </section>
@@ -120,7 +122,7 @@ function App() {
             </div>
         </div>
         <div className='mt-10'>
-          <button className='bg-red-700 py-4 rounded-lg text-white uppercase font-extrabold px-14 hover:animate-spin shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50 hover:scale-[1.03]'>quero proteger meu veículo</button>
+          <button type='submit' className='bg-red-700 py-4 rounded-lg text-white uppercase font-extrabold px-14 hover:animate-spin shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50 hover:scale-[1.03]'>quero proteger meu veículo</button>
         </div>
       </section>
       <footer className='flex items-center justify-center w-full h-10 bg-[#353535]'>
