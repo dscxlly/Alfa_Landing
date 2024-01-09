@@ -103,11 +103,11 @@ function App() {
           </div>
         </div>
       </section>
-      <section className='flex items-center justify-center h-screen w-full bg-blue'>
+      <section className='flex items-center justify-center h-screen w-full bg-blue overflow-hidden'>
         <div className='flex items-center justify-center'>
             <div className='w-full h-full px-32 ml-20'>
               <div className=''>
-                <h1 className='text-white capitalize mb-6 font-extrabold text-[44px] text-center'>dúvidas frequentes</h1>
+                <h1 className='text-white capitalize mb-10 font-extrabold text-[44px] text-center'>dúvidas frequentes</h1>
               </div>
               <div className='list'>
                 {
