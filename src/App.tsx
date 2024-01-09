@@ -6,6 +6,7 @@ import phone from  './assets/phone.png';
 import mobi from './assets/mobi.png';
 import React, { useState } from 'react';
 import Accordion from './components/Accordion';
+import SelectComp from './components/SelectComp';
 
 function App() {
 
@@ -13,7 +14,6 @@ function App() {
     {
       question: "O que é proteção veicular?",
       answer: "...",
-      active: 1
     },
     {
       question: "Quem pode se associar a Alfa?",
@@ -55,21 +55,16 @@ function App() {
                   name='nome' 
                   placeholder='Nome*' 
                   type='text'
-                  className='my-2 py-4 rounded-lg'
+                  className='m-2 p-4 rounded-md'
                 />
                 <input
                   name='whatsapp' 
                   placeholder='Whatsapp*' 
                   type='tel'
-                  className='my-2 py-4 rounded-lg'
+                  className='m-2 p-4 rounded-md'
                 />
-                <select className='my-2 py-4 rounded-lg'>
-                  <option selected value="veiculo">Qual o seu veículo?</option>
-                  <option value="carro">Carro</option>
-                  <option value="moto">Moto</option>
-                  <option value="caminhao">Caminhão</option>
-                </select>
-                <button className='bg-red-700 py-4 rounded-lg text-white uppercase font-extrabold px-14'>quero proteger meu veículo</button>
+                <SelectComp />
+                <button className='bg-red-700 py-4 rounded-lg text-white uppercase font-extrabold px-14 m-5 hover:transition-colors hover:duration-300 shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50 hover:scale-[1.03]'>quero proteger meu veículo</button>
               </form>
             </div>
           </div>
@@ -81,25 +76,25 @@ function App() {
             <h1 className='uppercase text-3xl font-extrabold text-center text-blue'>benefícios que o associado <br /><span className='text-red-700'>alfa</span> tem</h1>
           </div>
           <div className='flex items-center justify-center p-10'>
-            <div className='flex flex-col items-center justify-center w-64 h-72 p-10 m-2 rounded-lg shadow-bs1 place-content-between text-center space-y-10'>
+            <div className='flex flex-col items-center justify-center w-64 h-72 p-10 m-4 rounded-lg shadow-bs1 place-content-between text-center space-y-10 hover:transition-colors hover:duration-300 hover:shadow-lg hover:scale-[1.1]'>
               <img src={crash} className='w-32' />
               <h5 className='uppercase font-extrabold text-blue'>proteção veicular e de vidros</h5>
             </div>
-            <div className='flex flex-col items-center justify-center w-64 h-72 p-10 m-2 rounded-lg shadow-bs1 place-content-between text-center space-y-10'>
+            <div className='flex flex-col items-center justify-center w-64 h-72 p-10 m-4 rounded-lg shadow-bs1 place-content-between text-center space-y-10 hover:transition-colors hover:duration-300 hover:shadow-lg hover:scale-[1.1]'>
               <img src={phone} className='w-24'/>
               <h5 className='uppercase font-extrabold text-blue'>assistência 24h</h5>
             </div>
-            <div className='flex flex-col items-center justify-center w-64 h-72 p-10 m-2 rounded-lg shadow-bs1 place-content-between text-center space-y-10'>
+            <div className='flex flex-col items-center justify-center w-64 h-72 p-10 m-4 rounded-lg shadow-bs1 place-content-between text-center space-y-10 hover:transition-colors hover:duration-300 hover:shadow-lg hover:scale-[1.1]'>
               <img src={gps} className='w-24'/>
               <h5 className='uppercase font-extrabold text-blue'>rastreamento</h5>
             </div>
-            <div className='flex flex-col items-center justify-center w-64 h-72 p-10 m-2 rounded-lg shadow-bs1 place-content-between text-center space-y-10'>
+            <div className='flex flex-col items-center justify-center w-64 h-72 p-10 m-4 rounded-lg shadow-bs1 place-content-between text-center space-y-10 hover:transition-colors hover:duration-300 hover:shadow-lg hover:scale-[1.1]'>
               <img src={car} className='w-32'/>
               <h5 className='uppercase font-extrabold text-blue'>carro e moto reserva</h5>
             </div>
           </div>
           <div>
-            <button className='bg-red-700 py-4 rounded-lg text-white uppercase font-extrabold px-14'>quero proteger meu veículo</button>
+            <button className='bg-red-700 py-4 rounded-lg text-white uppercase font-extrabold px-14 hover:transition-colors hover:duration-300 shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50'>quero proteger meu veículo</button>
           </div>
         </div>
       </section>
