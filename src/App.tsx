@@ -4,13 +4,12 @@ import crash from './assets/crash.png';
 import gps from './assets/gps.png';
 import phone from  './assets/phone.png';
 import mobi from './assets/mobi.png';
-import React, { useState } from 'react';
 import Accordion from './components/Accordion';
 import SelectComp from './components/SelectComp';
 
 function App() {
 
-  const [list, setList] = useState([
+  const list = ([
     {
       question: "O que é proteção veicular?",
       answer: "...",
