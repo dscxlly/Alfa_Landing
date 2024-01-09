@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div className='bg-gray-900 flex flex-col font-montserrat items-center justify-start mx-auto w-full md:w-screen md:overflow-hidden'>
-      <header className="flex items-center justify-center w-full h-12 bg-white md:h-10">
+      <header className="flex items-center justify-start w-full h-12 bg-white md:h-10 sm:justify-center">
         <div>
           <img src={logo_color} alt='logo' className="h-48 m-56 md:h-40 md:m-20" />
         </div>
