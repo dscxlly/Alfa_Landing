@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo_color from './assets/logo_color.png';
 import car from './assets/car.png';
 import crash from './assets/crash.png';
@@ -6,9 +6,45 @@ import gps from './assets/gps.png';
 import phone from  './assets/phone.png';
 import mobi from './assets/mobi.png';
 import Accordion from './components/Accordion';
-import SelectComp from './components/SelectComp';
+import Component_3 from './assets/Component_3.png';
+import Component_4 from './assets/Component_4.png';
+import Component_5 from './assets/Component_5.png';
+import Component_6 from './assets/Component_6.png';
+import { components } from 'react-select';
+
+interface Option {
+  value: string;
+  label: string;
+}
 
 function App() {
+
+  const [selectedOptions, setSelectedOptions] = useState<Option[]>([]);
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  const options: Option[] = [
+    { value: 'carro', label: 'Carro' },
+    { value: 'moto', label: 'Moto' },
+    { value: 'caminhão', label: 'Caminhão' },
+  ];
+
+  const handleOptionChange = (option: Option) => {
+    if (selectedOptions.some((item) => item.value === option.value)) {
+      setSelectedOptions(selectedOptions.filter((item) => item.value !== option.value));
+    } else {
+      setSelectedOptions([...selectedOptions, option]);
+    }
+  };
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    console.log('Itens Selecionados:', selectedOptions);
+    
+  };
 
   const list = ([
     {
@@ -30,81 +66,150 @@ function App() {
   ]);
 
   return (
-    <div className='bg-gray-900 flex flex-col font-montserrat items-center justify-start mx-auto w-full md:w-screen md:overflow-hidden'>
-      <header className="flex items-center justify-start w-full h-12 bg-white md:h-10 sm:justify-center sm:h-8">
+    <div className='overflow-x-hidden w-screen bg-blue flex flex-col font-montserrat items-center  '>
+      <header className='bg-white h-8 w-screen flex items-center justify-center lg:justify-start md:h-14 lg:h-20'>
         <div>
-          <img src={logo_color} alt='logo' className="h-48 m-56 md:h-40 md:m-20 sm:h-32" />
+          <img src={logo_color} alt='logo' className='w-32 md:w-48 lg:ml-72 lg:w-60' />
         </div>
       </header>
-      <section 
-        className='h-screen m-auto w-full bg-bg-image bg-cover md:bg-bg-mid sm:bg-bg-sm'  
-      >
-        <div className='flex items-center h-screen ml-60 md:ml-20 sm:mx-4'>
-          <div className='backdrop-blur-md bg-black/20 w-[480px] h-[480px] border-0 border-solid rounded-3xl flex flex-col justify-center items-center sm:w-96'>
-            <div>
-              <h1 className='uppercase text-white font-extrabold text-3xl mx-10 text-center sm:text-[22px] sm:mt-10 sm:mx-5'>
-                proteção completa para o seu veículo
+      <section className='h-screen w-screen bg-bg-sm md:bg-bg-mid lg:bg-bg-image bg-cover  '>
+        <div className='flex items-center justify-center lg:justify-start lg:ml-72 h-screen m-2'>
+          <div className='backdrop-blur-lg bg-black/10 border-0 rounded-3xl flex flex-col justify-center items-center p-5 w-screen md:w-[600px] lg:w-[480px] lg:h-[480px]'>
+            <div className=''>
+              <h1 className='uppercase text-white text-xl font-extrabold text-center md:text-4xl md:mt-10 lg:text-2xl'>
+                proteção completa <br /> para o seu veículo
               </h1>
-              <p className='text-white font-semibold text-sm m-2 text-center md:text-base md:mx-14 sm:text-[14px] sm:mx-8'>
-              preencha o formulário que em instantes a nossa equipe entrará em contato. 
+              <p className='text-white font-semibold text-[14px] mx-2 my-1 text-center md:text-xl lg:text-base'>
+              preencha o formulário que em instantes <br /> a nossa equipe entrará em contato. 
               </p>
             </div>
             <div>
-              <form className='flex flex-col'>
+              <form action='https://api.sheetmonkey.io/form/ieFRFyUNE1naBwYeoSC2iQ' method='post' className='flex flex-col items-center justify-center md:m-5 lg:m-0'>
                 <input
-                  name='nome' 
+                  name='Nome'
                   placeholder='Nome*' 
                   type='text'
-                  className='m-2 p-4 rounded-md sm:mx-6'
+                  required
+                  className='px-3 py-2 rounded-lg m-1 md:w-[460px] md:py-4 md:mb-4 md:text-2xl lg:text-lg lg:w-[400px] lg:mb-1 lg:py-3'
                 />
                 <input
-                  name='whatsapp' 
+                  name='Whatsapp' 
                   placeholder='Whatsapp*' 
                   type='tel'
-                  className='m-2 p-4 rounded-md sm:mx-6'
+                  required
+                  className='px-3 py-2 rounded-lg m-1 md:w-[460px] md:py-4 md:mb-4 md:text-2xl lg:text-lg lg:w-[400px] lg:mb-1 lg:py-3'
                 />
-                <SelectComp />
-                <button className='bg-red-700 py-4 rounded-lg text-white uppercase font-extrabold px-14 m-5 hover:animate-spin shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50 hover:scale-[1.03] sm:py-2 sm:px-10 sm:mx-16 sm:mb-12 sm:text-[12px]'>quero proteger meu veículo</button>
+                <div className='py-1 rounded-lg'>
+                  <div
+                    className='bg-white cursor-pointer flex justify-between px-4 py-2 rounded-lg w-56 text-black/80 md:w-[460px] md:py-4 md:mb-3 md:text-2xl lg:text-lg lg:w-[400px] lg:mb-1 lg:py-3'
+                    onClick={toggleDropdown}
+                  >
+                    Qual o seu veículo?
+                    <span className=''>▼</span>
+                  </div>
+                  {isDropdownOpen && (
+                    <div className='absolute bg-white cursor-pointer flex flex-col justify-between px-4 py-2 rounded-lg w-56 mt-1 md:w-[460px] md:text-2xl lg:text-lg lg:w-[400px]'>
+                      {options.map((option) => (
+                        <label key={option.value} className='block'>
+                          <input
+                            type='checkbox'
+                            value={option.value}
+                            checked={selectedOptions.some((item) => item.value === option.value)}
+                            key={option.value}
+                            name='Veículo'
+                            onChange={() => handleOptionChange(option)}
+                            className='lg:w-5 md:w-3 md:h-3'
+                          />
+                          {option.label}
+                        </label>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <button className='bg-red-700 rounded-lg text-white uppercase font-extrabold p-3 m-5 my-2 text-xs hover:animate-spin shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50 hover:scale-[1.03] md:p-5 md:text-xl md:mt-10 lg:mb-10 lg:my-2 lg:mx-12 lg:text-base'>quero proteger meu veículo</button>
               </form>
             </div>
           </div>
         </div>
       </section>
-      <section className='flex flex-col items-center justify-center h-screen w-full bg-white'>
-        <div className='flex flex-col items-center justify-center'>
+      <section className='w-screen h-full bg-white flex flex-col items-center justify-center '>
+        <div className='my-10'>
           <div className=''>
-            <h1 className='uppercase text-[60px] font-extrabold text-center text-blue px-[700px] sm:text-xl md:text-3xl md:px-32 lg:px-0'>benefícios que o associado <span className='text-red-700'>alfa</span> tem</h1>
+            <h1 className='uppercase text-blue font-extrabold text-center text-lg md:text-5xl md:my-10'>benefícios que o <br />associado <span className='text-red-700'>alfa</span> tem</h1>
           </div>
-          <div className='flex md:w-screen items-center justify-center p-10 md:grid md:grid-cols-2 md:grid-rows-2 md:gap-2 md:px-20 sm:px-4 sm:gap-0'>
-            <div className='flex flex-col items-center justify-center w-80 h-96 p-10 m-4 rounded-lg shadow-bs1 place-content-between text-center space-y-10 hover:transition-colors hover:duration-300 hover:shadow-lg hover:scale-[1.1] sm:w-3/4 sm:h-3/4 sm:p-2 sm:space-y-0'>
-              <img src={crash} alt='acidente' className='w-32 sm:w-14' />
-              <h5 className='uppercase font-extrabold text-blue sm:text-sm'>proteção veicular e de vidros</h5>
+          
+          <div id="default-carousel" className="relative w-full h-full md:hidden" data-carousel="slide">
+              {/* <!-- Carousel wrapper --> */}
+              <div className="relative h-56   rounded-lg md:h-96">
+                  {/* <!-- Item 1 --> */}
+                  <div className="duration-700 ease-in-out" data-carousel-item>
+                      <img src={Component_3} className="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+                  </div>
+                  {/* <!-- Item 2 --> */}
+                  <div className="hidden duration-700 ease-in-out" data-carousel-item>
+                      <img src={Component_4} className="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+                  </div>
+                  {/* <!-- Item 3 --> */}
+                  <div className="hidden duration-700 ease-in-out" data-carousel-item>
+                      <img src={Component_5} className="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+                  </div>
+                  {/* <!-- Item 4 --> */}
+                  <div className="hidden duration-700 ease-in-out" data-carousel-item>
+                      <img src={Component_6} className="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+                  </div>
+              </div>
+              {/* <!-- Slider indicators --> */}
+              <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                  <button type="button" className="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                  <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                  <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                  <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+              </div>
+              {/* <!-- Slider controls --> */}
+              <button type="button" className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                  <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-transparent group-focus:outline-none">
+                      <svg className="w-4 h-4 text-red-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                      </svg>
+                      <span className="sr-only">Previous</span>
+                  </span>
+              </button>
+              <button type="button" className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                  <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-transparent group-focus:outline-none">
+                      <svg className="w-4 h-4 text-red-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                      </svg>
+                      <span className="sr-only">Next</span>
+                  </span>
+              </button>
+          </div>
+
+          <div className='hidden md:grid md:grid-cols-2 md:p-4 md:items-center md:justify-center lg:flex'>
+            <div className=''>
+              <img src={Component_3} alt='acidente' className='hover:scale-[1.1] md:scale-90' />
             </div>
-            <div className='flex flex-col items-center justify-center w-80 h-96 p-10 m-4 rounded-lg shadow-bs1 place-content-between text-center space-y-10 hover:transition-colors hover:duration-300 hover:shadow-lg hover:scale-[1.1] sm:w-3/4 sm:h-3/4 sm:p-5 sm:space-y-0'>
-              <img src={phone} alt='telefone' className='w-24 sm:w-10'/>
-              <h5 className='uppercase font-extrabold text-blue'>assistência 24h</h5>
+            <div className=''>
+              <img src={Component_4} alt='telefone' className='hover:scale-[1.1] md:scale-90 cove'/>
             </div>
-            <div className='flex flex-col items-center justify-center w-80 h-96 p-10 m-4 rounded-lg shadow-bs1 place-content-between text-center space-y-10 hover:transition-colors hover:duration-300 hover:shadow-lg hover:scale-[1.1] sm:w-3/4 sm:h-3/4 sm:p-5 sm:space-y-0'>
-              <img src={gps} alt='mapa' className='w-24 sm:w-10'/>
-              <h5 className='uppercase font-extrabold text-blue'>rastreamento</h5>
+            <div className=''>
+              <img src={Component_5} alt='mapa' className='hover:scale-[1.1] md:scale-90'/>
             </div>
-            <div className='flex flex-col items-center justify-center w-80 h-96 p-10 m-4 rounded-lg shadow-bs1 place-content-between text-center space-y-10 hover:transition-colors hover:duration-300 hover:shadow-lg hover:scale-[1.1] sm:w-3/4 sm:h-3/4 sm:p-5 sm:space-y-0'>
-              <img src={car} alt='carro/moto' className='w-32 sm:w-14'/>
-              <h5 className='uppercase font-extrabold text-blue'>carro e moto reserva</h5>
+            <div className=''>
+              <img src={Component_6} alt='carro/moto' className='hover:scale-[1.1] md:scale-90'/>
             </div>
           </div>
-          <div>
-            <button className='bg-red-700 py-4 rounded-lg text-white uppercase font-extrabold px-14 m-5 hover:animate-spin shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50 hover:scale-[1.03] sm:py-2 sm:px-10 sm:mx-16 sm:mb-12 sm:text-[12px] sm: mt-0'>quero proteger meu veículo</button>
+          <div className='flex items-center justify-center'>
+            <button className='bg-red-700 rounded-lg text-white uppercase font-extrabold p-3 m-5 my-2 text-xs hover:animate-spin shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50 hover:scale-[1.03] md:p-8 md:text-2xl md:mb-10'>quero proteger meu veículo</button>
           </div>
         </div>
       </section>
-      <section className='flex flex-col items-center justify-center h-screen w-full bg-blue overflow-hidden'>
-        <div className='flex items-center justify-center mb-10'>
-            <div className='w-full h-full px-32 ml-20'>
+      <section className='flex flex-col lg:w-screen'>
+        <div className='flex items-center justify-center lg:justify-between p-5'>
+            <div className='w-full h-full md:px-10'>
               <div className=''>
-                <h1 className='text-white capitalize mb-10 font-extrabold text-[44px] text-center'>dúvidas frequentes</h1>
+                <h1 className='capitalize text-white font-extrabold text-3xl text-center my-10 md:text-5xl'>dúvidas frequentes</h1>
               </div>
-              <div className='list'>
+              <div className='list md:py-5'>
                 {
                     list.map((item, key) => (
                       <Accordion key={key} datas={item} />
@@ -112,20 +217,20 @@ function App() {
                 }
               </div>
             </div>
-            <div className='w-full h-full'>
+            <div className='hidden lg:w-full lg:h-full lg:block'>
               <img 
                 src={mobi}
                 alt='carro'
-                className='scale-[1.5]'  
+                className='lg:relative lg:w-full lg:scale-[1.3] lg:ml-20'  
               />
             </div>
         </div>
-        <div className='mt-10'>
-          <button className='bg-red-700 py-4 rounded-lg text-white uppercase font-extrabold px-14 hover:animate-spin shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50 hover:scale-[1.03]'>quero proteger meu veículo</button>
+        <div className='flex items-center justify-center mb-5'>
+          <button className='bg-red-700 rounded-lg text-white uppercase font-extrabold p-3 m-5 my-2 text-xs hover:animate-spin shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50 hover:scale-[1.03] md:p-8 md:text-2xl md:mb-10'>quero proteger meu veículo</button>
         </div>
       </section>
-      <footer className='flex items-center justify-center w-full h-10 bg-[#353535]'>
-        <h2 className='text-white'>{(new Date().getFullYear())} - Todos os direitos reservados©</h2>
+      <footer className='flex items-center justify-center w-full h-10 bg-[#353535] md:h-14'>
+        <h2 className='text-white md:text-2xl'>{(new Date().getFullYear())} - Todos os direitos reservados©</h2>
       </footer>
     </div>
   )

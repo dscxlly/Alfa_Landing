@@ -14,9 +14,9 @@ const SelectComp = () => {
             isMulti
             placeholder='Qual o seu veículo?'
             classNames={{ control: (state) =>
-                state.isMulti ? 'p-2' : 'p-8'
+                state.isMulti ? 'p-1' : 'p-8'
             }}
-            className='p-2 rounded-xl sm:mx-4'
+            className='p-1 rounded-md'
         />
     )
 }

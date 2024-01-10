@@ -5,12 +5,18 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    screens: { md: { max: "px" }, sm: { max: "768px" } },
+    screens: {
+      'sm': '100px',
+      'md': '600px',
+      'lg': '1080px',
+      'xl': '1500px'
+    },
     extend: {
       backgroundImage: {
         'bg-image': "url('./assets/image1.jpg')",
         'bg-mid': "url('./assets/imagemd.png')",
-        'bg-sm':  "url('./assets/imagesm.png')"
+        'bg-sm':  "url('./assets/imagesm.png')",
+        'bg-car': "url('./assets/mobi-bg.png')"
       },
       fontFamily: {
         'montserrat': ['"Montserrat"', 'sans-serif'],
