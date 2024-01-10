@@ -7,6 +7,8 @@ import phone from  './assets/phone.png';
 import mobi from './assets/mobi.png';
 import Accordion from './components/Accordion';
 import SelectComp from './components/SelectComp';
+import InputMask from 'react-input-mask';
+
 
 function App() {
 
@@ -50,16 +52,19 @@ function App() {
               </p>
             </div>
             <div>
-              <form className='flex flex-col'>
+              <form action='https://api.sheetmonkey.io/form/ieFRFyUNE1naBwYeoSC2iQ' method='post' className='flex flex-col'>
                 <input
-                  name='nome' 
+                  name='Nome' 
                   placeholder='Nome*' 
+                  required
                   type='text'
                   className='m-2 p-4 rounded-md sm:mx-6'
                 />
-                <input
-                  name='whatsapp' 
-                  placeholder='Whatsapp*' 
+                <InputMask
+                  mask ='(99) 99999-9999'
+                  name='Whatsapp' 
+                  placeholder='Whatsapp*'
+                  required 
                   type='tel'
                   className='m-2 p-4 rounded-md sm:mx-6'
                 />

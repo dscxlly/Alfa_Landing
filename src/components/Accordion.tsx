@@ -4,7 +4,7 @@ const Accordion =  (props: any) => {
     const [data, setData] = useState(props.datas);
     
     const handleToggleActive = () => {
-        let activeNew = data.active === 1 ? 0 : 1;
+        const activeNew = data.active === 1 ? 0 : 1;
         setData({...data, active : activeNew});
     }
 
