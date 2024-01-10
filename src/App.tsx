@@ -11,6 +11,8 @@ import Component_4 from './assets/Component_4.png';
 import Component_5 from './assets/Component_5.png';
 import Component_6 from './assets/Component_6.png';
 import { components } from 'react-select';
+import InputMask from 'react-input-mask';
+
 
 interface Option {
   value: string;
@@ -86,15 +88,18 @@ function App() {
             <div>
               <form action='https://api.sheetmonkey.io/form/ieFRFyUNE1naBwYeoSC2iQ' method='post' className='flex flex-col items-center justify-center md:m-5 lg:m-0'>
                 <input
-                  name='Nome'
+                  name='nome' 
                   placeholder='Nome*' 
+                  required
                   type='text'
                   required
                   className='px-3 py-2 rounded-lg m-1 md:w-[460px] md:py-4 md:mb-4 md:text-2xl lg:text-lg lg:w-[400px] lg:mb-1 lg:py-3'
                 />
-                <input
+                <InputMask
+                  mask ='(99) 99999-9999'
                   name='Whatsapp' 
-                  placeholder='Whatsapp*' 
+                  placeholder='Whatsapp*'
+                  required 
                   type='tel'
                   required
                   className='px-3 py-2 rounded-lg m-1 md:w-[460px] md:py-4 md:mb-4 md:text-2xl lg:text-lg lg:w-[400px] lg:mb-1 lg:py-3'
