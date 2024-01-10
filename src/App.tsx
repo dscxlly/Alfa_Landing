@@ -1,3 +1,4 @@
+import React from 'react';
 import logo_color from './assets/logo_color.png';
 import car from './assets/car.png';
 import crash from './assets/crash.png';
