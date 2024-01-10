@@ -1,4 +1,3 @@
-import React from 'react';
 import Select from 'react-select';
 
 const options = [
@@ -16,7 +15,7 @@ const SelectComp = () => {
             classNames={{ control: (state) =>
                 state.isMulti ? 'p-2' : 'p-8'
             }}
-            className='p-2 rounded-xl'
+            className='p-2 rounded-xl sm:mx-4'
         />
     )
 }

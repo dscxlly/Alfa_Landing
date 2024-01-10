@@ -5,7 +5,7 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    screens: { md: { max: "1050px" }, sm: { max: "550px" } },
+    screens: { md: { max: "px" }, sm: { max: "768px" } },
     extend: {
       backgroundImage: {
         'bg-image': "url('./assets/image1.jpg')",
