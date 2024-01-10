@@ -82,9 +82,9 @@ function App() {
               </p>
             </div>
             <div>
-              <form action='https://api.sheetmonkey.io/form/ieFRFyUNE1naBwYeoSC2iQ' method='post' className='flex flex-col items-center justify-center md:m-5 lg:m-0'>
+              <form action='https://api.sheetmonkey.io/form/gCRg4FqMcLVCiySJwCqnD' method='post' className='flex flex-col items-center justify-center md:m-5 lg:m-0'>
                 <input
-                  name='nome' 
+                  name='Nome' 
                   placeholder='Nome*' 
                   required
                   type='text'
