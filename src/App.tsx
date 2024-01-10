@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 import logo_color from './assets/logo_color.png';
-import car from './assets/car.png';
-import crash from './assets/crash.png';
-import gps from './assets/gps.png';
-import phone from  './assets/phone.png';
 import mobi from './assets/mobi.png';
 import Accordion from './components/Accordion';
 import Component_3 from './assets/Component_3.png';
@@ -92,7 +88,6 @@ function App() {
                   placeholder='Nome*' 
                   required
                   type='text'
-                  required
                   className='px-3 py-2 rounded-lg m-1 md:w-[460px] md:py-4 md:mb-4 md:text-2xl lg:text-lg lg:w-[400px] lg:mb-1 lg:py-3'
                 />
                 <InputMask
@@ -101,7 +96,6 @@ function App() {
                   placeholder='Whatsapp*'
                   required 
                   type='tel'
-                  required
                   className='px-3 py-2 rounded-lg m-1 md:w-[460px] md:py-4 md:mb-4 md:text-2xl lg:text-lg lg:w-[400px] lg:mb-1 lg:py-3'
                 />
                 <div className='py-1 rounded-lg'>
