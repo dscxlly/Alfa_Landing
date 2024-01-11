@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import InputMask from 'react-input-mask';
+import { useNavigate } from 'react-router-dom';
+
 import logo_color from './assets/logo_color.png';
 import mobi from './assets/mobi.png';
 import Accordion from './components/Accordion';
@@ -6,8 +9,6 @@ import Component_3 from './assets/Component_3.png';
 import Component_4 from './assets/Component_4.png';
 import Component_5 from './assets/Component_5.png';
 import Component_6 from './assets/Component_6.png';
-import InputMask from 'react-input-mask';
-import { redirect } from 'react-router-dom';
 
 
 interface Option {
@@ -16,6 +17,8 @@ interface Option {
 }
 
 function App() {
+
+  const navigate = useNavigate();
 
   const [selectedOptions, setSelectedOptions] = useState<Option[]>([]);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -61,7 +64,7 @@ function App() {
       if (response.ok) {
         console.log('Dados enviados com sucesso!');
         console.log('Redirecionando...');
-        redirect('./screens/VideoScreen')
+        navigate('/VideoScreen')
       } else {
         console.error('Erro ao enviar dados:', response.status, response.statusText);
         
@@ -69,8 +72,8 @@ function App() {
         const responseData = await response.json();
         console.error('Resposta da API:', responseData);
 
-        if (window.location.pathname !== './screens/VideoScreen') {
-          console.error('Rota não encontrada: ./screens/VideoScreen');
+        if (window.location.pathname !== '/VideoScreen') {
+          console.error('Rota não encontrada: /VideoScreen');
         }
       }
     } catch (error) {
