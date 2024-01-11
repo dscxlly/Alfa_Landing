@@ -6,7 +6,6 @@ import Component_3 from './assets/Component_3.png';
 import Component_4 from './assets/Component_4.png';
 import Component_5 from './assets/Component_5.png';
 import Component_6 from './assets/Component_6.png';
-import { components } from 'react-select';
 import InputMask from 'react-input-mask';
 
 
@@ -38,11 +37,40 @@ function App() {
     setDropdownOpen(!isDropdownOpen);
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Itens Selecionados:', selectedOptions);
-    
+  
+    const formData = {
+      Nome: e.currentTarget.Nome.value,
+      Whatsapp: e.currentTarget.Whatsapp.value,
+      Veiculo: selectedOptions.map(option => option.label).join(', '),
+    };
+  
+    console.log('Dados do formulário antes do envio:', formData);
+  
+    try {
+      const response = await fetch('https://api.sheetmonkey.io/form/gCRg4FqMcLVCiySJwCqnD', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        console.log('Dados enviados com sucesso!');
+      } else {
+        console.error('Erro ao enviar dados:', response.status, response.statusText);
+        
+        // Adicione esta parte para logar a resposta da API em caso de erro
+        const responseData = await response.json();
+        console.error('Resposta da API:', responseData);
+      }
+    } catch (error) {
+      console.error('Erro durante a requisição:', error);
+    }
   };
+  
 
   const list = ([
     {
@@ -82,9 +110,9 @@ function App() {
               </p>
             </div>
             <div>
-              <form action='https://api.sheetmonkey.io/form/ieFRFyUNE1naBwYeoSC2iQ' method='post' className='flex flex-col items-center justify-center md:m-5 lg:m-0'>
+              <form className='flex flex-col items-center justify-center md:m-5 lg:m-0 ' onSubmit={handleFormSubmit}>
                 <input
-                  name='nome' 
+                  name='Nome' 
                   placeholder='Nome*' 
                   required
                   type='text'
@@ -115,7 +143,7 @@ function App() {
                             value={option.value}
                             checked={selectedOptions.some((item) => item.value === option.value)}
                             key={option.value}
-                            name='Veículo'
+                            name='Veiculo'
                             onChange={() => handleOptionChange(option)}
                             className='lg:w-5 md:w-3 md:h-3'
                           />
