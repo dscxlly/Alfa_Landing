@@ -7,6 +7,7 @@ import Component_4 from './assets/Component_4.png';
 import Component_5 from './assets/Component_5.png';
 import Component_6 from './assets/Component_6.png';
 import InputMask from 'react-input-mask';
+import { redirect } from 'react-router-dom';
 
 
 interface Option {
@@ -59,12 +60,18 @@ function App() {
   
       if (response.ok) {
         console.log('Dados enviados com sucesso!');
+        console.log('Redirecionando...');
+        redirect('./screens/VideoScreen')
       } else {
         console.error('Erro ao enviar dados:', response.status, response.statusText);
         
         // Adicione esta parte para logar a resposta da API em caso de erro
         const responseData = await response.json();
         console.error('Resposta da API:', responseData);
+
+        if (window.location.pathname !== './screens/VideoScreen') {
+          console.error('Rota não encontrada: ./screens/VideoScreen');
+        }
       }
     } catch (error) {
       console.error('Erro durante a requisição:', error);
@@ -95,11 +102,11 @@ function App() {
     <div className='overflow-x-hidden w-full bg-blue flex flex-col font-montserrat items-center'>
       <header className='bg-white h-8 w-full flex items-center justify-center lg:justify-start md:h-14 lg:h-20'>
         <div>
-          <img src={logo_color} alt='logo' className='w-32 md:w-48 lg:ml-72 lg:w-60' />
+          <img src={logo_color} alt='logo' className='w-32 md:w-48 lg:ml-44 lg:w-60' />
         </div>
       </header>
       <section className='h-full w-full bg-bg-sm md:bg-bg-mid lg:bg-bg-image bg-cover  '>
-        <div className='flex items-center justify-center lg:justify-start lg:ml-72 h-screen m-2'>
+        <div className='flex items-center justify-center lg:justify-start lg:ml-44 h-screen m-2'>
           <div className='backdrop-blur-lg bg-black/10 border-0 rounded-3xl flex flex-col justify-center items-center p-5 w-full md:w-[600px] lg:w-[480px] lg:h-[480px]'>
             <div className=''>
               <h1 className='uppercase text-white text-xl font-extrabold text-center md:text-4xl md:mt-10 lg:text-2xl'>
