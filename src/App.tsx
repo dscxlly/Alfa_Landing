@@ -112,7 +112,7 @@ function App() {
             <div>
               <form className='flex flex-col items-center justify-center md:m-5 lg:m-0 ' onSubmit={handleFormSubmit}>
                 <input
-                  name='Nome' 
+                  name='nome' 
                   placeholder='Nome*' 
                   required
                   type='text'
