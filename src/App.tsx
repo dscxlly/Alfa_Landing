@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import InputMask from 'react-input-mask';
 import { useNavigate } from 'react-router-dom';
-
+import { Carousel } from '@material-tailwind/react';
 import logo_color from './assets/logo_color.png';
 import mobi from './assets/mobi.png';
 import Accordion from './components/Accordion';
@@ -174,54 +174,7 @@ function App() {
           <div className=''>
             <h1 className='uppercase text-blue font-extrabold text-center text-lg md:text-5xl md:my-10'>benefícios que o <br />associado <span className='text-red-700'>alfa</span> tem</h1>
           </div>
-          
-          <div id="default-carousel" className="relative w-full h-full md:hidden" data-carousel="slide">
-              {/* <!-- Carousel wrapper --> */}
-              <div className="relative h-56   rounded-lg md:h-96">
-                  {/* <!-- Item 1 --> */}
-                  <div className="duration-700 ease-in-out" data-carousel-item>
-                      <img src={Component_3} className="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                  </div>
-                  {/* <!-- Item 2 --> */}
-                  <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                      <img src={Component_4} className="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                  </div>
-                  {/* <!-- Item 3 --> */}
-                  <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                      <img src={Component_5} className="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                  </div>
-                  {/* <!-- Item 4 --> */}
-                  <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                      <img src={Component_6} className="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                  </div>
-              </div>
-              {/* <!-- Slider indicators --> */}
-              <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-                  <button type="button" className="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                  <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                  <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                  <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-              </div>
-              {/* <!-- Slider controls --> */}
-              <button type="button" className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                  <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-transparent group-focus:outline-none">
-                      <svg className="w-4 h-4 text-red-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                      </svg>
-                      <span className="sr-only">Previous</span>
-                  </span>
-              </button>
-              <button type="button" className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                  <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-transparent group-focus:outline-none">
-                      <svg className="w-4 h-4 text-red-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                      </svg>
-                      <span className="sr-only">Next</span>
-                  </span>
-              </button>
-          </div>
-
-          <div className='hidden md:grid md:grid-cols-2 md:p-4 md:items-center md:justify-center lg:flex'>
+          <div className='sm:grid sm:grid-cols-2 sm:p-4 sm:items-center sm:justify-center lg:flex'>
             <div className=''>
               <img src={Component_3} alt='acidente' className='hover:scale-[1.1] md:scale-90' />
             </div>
@@ -267,7 +220,7 @@ function App() {
         </div>
       </section>
       <footer className='flex items-center justify-center w-full h-10 bg-[#353535] md:h-14'>
-        <h2 className='text-white md:text-2xl'>{(new Date().getFullYear())} - Todos os direitos reservados©</h2>
+        <h2 className='text-white md:text-2xl text-sm'>{(new Date().getFullYear())} - Todos os direitos reservados©</h2>
       </footer>
     </div>
   )
