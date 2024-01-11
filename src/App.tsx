@@ -92,15 +92,15 @@ function App() {
   ]);
 
   return (
-    <div className='overflow-x-hidden w-screen bg-blue flex flex-col font-montserrat items-center  '>
-      <header className='bg-white h-8 w-screen flex items-center justify-center lg:justify-start md:h-14 lg:h-20'>
+    <div className='overflow-x-hidden w-full bg-blue flex flex-col font-montserrat items-center'>
+      <header className='bg-white h-8 w-full flex items-center justify-center lg:justify-start md:h-14 lg:h-20'>
         <div>
           <img src={logo_color} alt='logo' className='w-32 md:w-48 lg:ml-72 lg:w-60' />
         </div>
       </header>
-      <section className='h-screen w-screen bg-bg-sm md:bg-bg-mid lg:bg-bg-image bg-cover  '>
+      <section className='h-full w-full bg-bg-sm md:bg-bg-mid lg:bg-bg-image bg-cover  '>
         <div className='flex items-center justify-center lg:justify-start lg:ml-72 h-screen m-2'>
-          <div className='backdrop-blur-lg bg-black/10 border-0 rounded-3xl flex flex-col justify-center items-center p-5 w-screen md:w-[600px] lg:w-[480px] lg:h-[480px]'>
+          <div className='backdrop-blur-lg bg-black/10 border-0 rounded-3xl flex flex-col justify-center items-center p-5 w-full md:w-[600px] lg:w-[480px] lg:h-[480px]'>
             <div className=''>
               <h1 className='uppercase text-white text-xl font-extrabold text-center md:text-4xl md:mt-10 lg:text-2xl'>
                 proteção completa <br /> para o seu veículo
@@ -159,7 +159,7 @@ function App() {
           </div>
         </div>
       </section>
-      <section className='w-screen h-full bg-white flex flex-col items-center justify-center '>
+      <section className='w-full h-full bg-white flex flex-col items-center justify-center '>
         <div className='my-10'>
           <div className=''>
             <h1 className='uppercase text-blue font-extrabold text-center text-lg md:text-5xl md:my-10'>benefícios que o <br />associado <span className='text-red-700'>alfa</span> tem</h1>
@@ -230,7 +230,7 @@ function App() {
           </div>
         </div>
       </section>
-      <section className='flex flex-col lg:w-screen'>
+      <section className='flex flex-col lg:w-full'>
         <div className='flex items-center justify-center lg:justify-between p-5'>
             <div className='w-full h-full md:px-10'>
               <div className=''>
