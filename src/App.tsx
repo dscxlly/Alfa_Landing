@@ -26,6 +26,7 @@ function App() {
     { value: 'carro', label: 'Carro' },
     { value: 'moto', label: 'Moto' },
     { value: 'caminhão', label: 'Caminhão' },
+    { value: 'bicicleta', label: 'Bicicleta' },
   ];
 
   const handleOptionChange = (option: Option) => {
@@ -84,11 +85,11 @@ function App() {
   const list = ([
     {
       question: "O que é proteção veicular?",
-      answer: "...",
+      answer: "A proteção veicular é mais do que um serviço; é a garantia de tranquilidade para quem está ao volante. Na Alfa, entendemos que proteger seu veículo vai além de um simples contrato. É um compromisso com você em qualquer jornada. Oferecemos coberturas abrangentes assistência 24 horas e a certeza de que, em cada quilômetro, estamos ao seu lado.",
     },
     {
       question: "Quem pode se associar a Alfa?",
-      answer: "...",
+      answer: "Para ser associado Alfa basta ser habilitado possui um veiculo seja BICICLETA, CARRO, MOTO OU CAMINHÃO. Não consultamos o Serviço de proteção ao credito(SPC).",
     },
     {
       question: "Onde a Alfa atende?",
@@ -96,7 +97,7 @@ function App() {
     },
     {
       question: "Existe pagamento da adesão?",
-      answer: "...",
+      answer: "Na Alfa não temos pagamento de Adesão, no primeiro mês você vai pagar a mensalidades, mais algumas taxas, como taxa de rastreador...",
     }
   ]);
 
