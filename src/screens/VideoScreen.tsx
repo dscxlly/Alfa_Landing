@@ -1,5 +1,6 @@
 import React from "react";
 import logo from '../assets/logo.png';
+import videodepoimentosassociados from '../assets/videodepoimentosassociados.mp4';
 
 function VideoScreen () {
 
@@ -12,16 +13,20 @@ function VideoScreen () {
                 </div>
             </header>
             <section className="h-full flex flex-col items-center justify-center">
-                <div className="flex flex-col items-center justify-center p-4 md:mx-16 lg:mx-44">
-                    <h1 className='text-blue font-extrabold text-center px-1 text-xl md:text-3xl md:my-5 lg:mx-44'>
+                <div className="flex flex-col items-center justify-center p-4 lg:mx-32">
+                    <h1 className='text-blue font-extrabold text-center px-1 text-xl md:text-5xl md:my-5 lg:mx-64 md:mx-32 mx-16 lg:text-5xl'>
                         Você está a um passo de ter seu veículo protegido!
                     </h1>
-                    <h3 className='text-[8px] mx-2 my-1 text-center pb-5 pt-2 md:text-xl lg:text-base lg:mx-52'>
+                    <h3 className='text-sm mx-14 my-1 text-center pb-5 pt-2 md:text-2xl lg:text-base lg:mx-72 md:mx-18'>
                         Dentro de alguns instantes nossa equipe entrará em contato, para você ficar efetivamente protegido, enquanto isso veja alguns depoimentos de nossos associados.
                     </h3>
-                    <video className="md:w-2/3 w-full rounded-lg mb-5 h-full" controls>
-                        <source src="https://www.youtube.com/watch?v=h0ffIJ7ZO4U&pp=ygUec3VsdGFuIG9mIHN0cmluZ3MgZGlyZSBzdHJhaXRz" type="video" />
-                    </video>
+                    <video 
+                        className="md:w-2/3 w-full rounded-lg mb-5 h-full lg:w-2/4" 
+                        src={videodepoimentosassociados}
+                        controls={true}
+                        muted
+                        autoPlay
+                    />
                 </div>
 
                 
