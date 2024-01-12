@@ -8,6 +8,7 @@ import Component_3 from './assets/Component_3.png';
 import Component_4 from './assets/Component_4.png';
 import Component_5 from './assets/Component_5.png';
 import Component_6 from './assets/Component_6.png';
+import Component_7 from './assets/Component_7.svg';
 
 
 interface Option {
@@ -99,6 +100,30 @@ function App() {
     }
   ]);
 
+  const ScrollDownArrow = () => {
+    const scrollToBottom = () => {
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: 'smooth',
+      });
+    };
+  
+    return (
+      <div className='absolute left-1/2 bottom-1 lg:-bottom-16'>
+        <button onClick={scrollToBottom} className=''>
+          <img src={Component_7} alt="Custom Icon" className="h-8 md:h-12 "></img>
+        </button>
+      </div>
+    );
+  };
+
+  const ScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior:'smooth',
+    });
+  };
+
   return (
     <div className='overflow-x-hidden w-full bg-blue flex flex-col font-montserrat items-center'>
       <header className='bg-white h-8 w-full flex items-center justify-center lg:justify-start md:h-14 lg:h-20'>
@@ -166,6 +191,7 @@ function App() {
             </div>
           </div>
         </div>
+        <ScrollDownArrow />
       </section>
       <section className='w-full h-full bg-white flex flex-col items-center justify-center '>
         <div className='my-10'>
@@ -187,7 +213,7 @@ function App() {
             </div>
           </div>
           <div className='flex items-center justify-center'>
-            <button className='bg-red-700 rounded-lg text-white uppercase font-extrabold p-3 m-5 my-2 text-xs hover:animate-spin shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50 hover:scale-[1.03] md:p-8 md:text-2xl md:mb-10'>quero proteger meu veículo</button>
+            <button onClick={ScrollToTop} className='bg-red-700 rounded-lg text-white uppercase font-extrabold p-3 m-5 my-2 text-xs hover:animate-spin shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50 hover:scale-[1.03] md:p-8 md:text-2xl md:mb-10'>quero proteger meu veículo</button>
           </div>
         </div>
       </section>
@@ -214,7 +240,7 @@ function App() {
             </div>
         </div>
         <div className='flex items-center justify-center mb-5'>
-          <button className='bg-red-700 rounded-lg text-white uppercase font-extrabold p-3 m-5 my-2 text-xs hover:animate-spin shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50 hover:scale-[1.03] md:p-8 md:text-2xl md:mb-10'>quero proteger meu veículo</button>
+          <button onClick={ScrollToTop} className='bg-red-700 rounded-lg text-white uppercase font-extrabold p-3 m-5 my-2 text-xs hover:animate-spin shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50 hover:scale-[1.03] md:p-8 md:text-2xl md:mb-10'>quero proteger meu veículo</button>
         </div>
       </section>
       <footer className='flex items-center justify-center w-full h-10 bg-[#353535] md:h-14'>
