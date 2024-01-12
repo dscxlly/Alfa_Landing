@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import InputMask from 'react-input-mask';
 import { useNavigate } from 'react-router-dom';
-import { Carousel } from '@material-tailwind/react';
 import logo_color from './assets/logo_color.png';
 import mobi from './assets/mobi.png';
 import Accordion from './components/Accordion';
@@ -17,7 +16,6 @@ interface Option {
 }
 
 function App() {
-
   const navigate = useNavigate();
 
   const [selectedOptions, setSelectedOptions] = useState<Option[]>([]);
@@ -53,7 +51,7 @@ function App() {
     console.log('Dados do formulário antes do envio:', formData);
   
     try {
-      const response = await fetch('https://api.sheetmonkey.io/form/gCRg4FqMcLVCiySJwCqnD', {
+      const response = await fetch(import.meta.env.VITE_REACT_APP_API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
