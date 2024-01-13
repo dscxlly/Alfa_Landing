@@ -1,6 +1,6 @@
 import React from "react";
 import logo from '../assets/logo.png';
-import videodepoimentosassociados from '../assets/videodepoimentosassociados.mp4';
+import depoimentos from '../assets/depoimentos.mp4';
 
 function VideoScreen () {
 
@@ -21,11 +21,10 @@ function VideoScreen () {
                         Dentro de alguns instantes nossa equipe entrará em contato, para você ficar efetivamente protegido, enquanto isso veja alguns depoimentos de nossos associados.
                     </h3>
                     <video 
-                        className="md:w-2/3 w-full rounded-lg mb-5 h-full lg:w-2/4" 
-                        src={videodepoimentosassociados}
+                        className="md:w-2/3 w-full rounded-lg mb-5 h-full" 
+                        src={depoimentos}
                         controls={true}
-                        muted
-                        autoPlay
+                        typeof='video/mp4'
                     />
                 </div>
 
