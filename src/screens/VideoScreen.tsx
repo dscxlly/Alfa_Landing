@@ -1,4 +1,3 @@
-import React from "react";
 import logo from '../assets/logo.png';
 import depoimentos from '../assets/depoimentos.mp4';
 

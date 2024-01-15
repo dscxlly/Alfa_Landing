@@ -98,6 +98,10 @@ function App() {
     {
       question: "Existe pagamento da adesão?",
       answer: "Na Alfa não temos pagamento de Adesão, no primeiro mês você vai pagar a mensalidades, mais algumas taxas, como taxa de rastreador...",
+    },
+    {
+      question: "Na Alfa tem fidelidade?",
+      answer: "Não, não temos. Você pode cancelar a qualquer momento sem pagar nada a mais.",
     }
   ]);
 
@@ -110,7 +114,7 @@ function App() {
     };
   
     return (
-      <div className='absolute left-1/2 bottom-1 lg:-bottom-16'>
+      <div className='absolute left-1/2 -bottom-8 lg:-bottom-16'>
         <button onClick={scrollToBottom} className=''>
           <img src={Component_7} alt="Custom Icon" className="h-8 md:h-12 "></img>
         </button>
@@ -150,7 +154,7 @@ function App() {
                   placeholder='Nome*' 
                   required
                   type='text'
-                  className='px-3 py-2 rounded-lg m-1 md:w-[460px] md:py-4 md:mb-4 md:text-2xl lg:text-lg lg:w-[400px] lg:mb-1 lg:py-3'
+                  className='w-full px-3 py-2 rounded-lg m-1 md:w-[460px] md:py-4 md:mb-4 md:text-2xl lg:text-lg lg:w-[400px] lg:mb-1 lg:py-3'
                 />
                 <InputMask
                   mask ='(99) 99999-9999'
@@ -158,11 +162,11 @@ function App() {
                   placeholder='Whatsapp*'
                   required 
                   type='tel'
-                  className='px-3 py-2 rounded-lg m-1 md:w-[460px] md:py-4 md:mb-4 md:text-2xl lg:text-lg lg:w-[400px] lg:mb-1 lg:py-3'
+                  className='w-full px-3 py-2 rounded-lg m-1 md:w-[460px] md:py-4 md:mb-4 md:text-2xl lg:text-lg lg:w-[400px] lg:mb-1 lg:py-3'
                 />
                 <div className='py-1 rounded-lg'>
                   <div
-                    className='bg-white cursor-pointer flex justify-between px-4 py-2 rounded-lg w-56 text-black/80 md:w-[460px] md:py-4 md:mb-3 md:text-2xl lg:text-lg lg:w-[400px] lg:mb-1 lg:py-3'
+                    className='bg-white cursor-pointer flex justify-between px-4 py-2 rounded-lg w-80 text-black/80 md:w-[460px] md:py-4 md:mb-3 md:text-2xl lg:text-lg lg:w-[400px] lg:mb-1 lg:py-3'
                     onClick={toggleDropdown}
                   >
                     Qual o seu veículo?

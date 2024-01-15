@@ -53,5 +53,6 @@
     "whitelist": [
       "REACT_APP_API_URL"
     ]
-  }
+  },
+  "homepage": "http://lp.alfacb.org.br/"
 }
