@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import InputMask from 'react-input-mask';
 import { useNavigate } from 'react-router-dom';
+import { format } from 'date-fns';
+
 import NavBar from './components/NavBar';
 import mobi from './assets/mobi.png';
 import Accordion from './components/Accordion';
@@ -43,11 +45,15 @@ function App() {
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    const currentDateTime = new Date();
+    const formattedDateTime = format(currentDateTime, "dd-MM-yyyy HH:mm:ss");
   
     const formData = {
       Nome: e.currentTarget.Nome.value,
       Whatsapp: e.currentTarget.Whatsapp.value,
       Veiculo: selectedOptions.map(option => option.label).join(', '),
+      DataHoraPreenchimento: formattedDateTime,
     };
   
     console.log('Dados do formulário antes do envio:', formData);
@@ -62,7 +68,7 @@ function App() {
       });
   
       if (response.ok) {
-        console.log('Dados enviados com sucesso!');
+        console.log('Dados enviados com sucesso!', response);
         console.log('Redirecionando...');
         navigate('/VideoScreen')
       } else {
