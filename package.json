@@ -1,7 +1,7 @@
 {
   "name": "alfa-landing",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -57,5 +57,5 @@
       "REACT_APP_API_URL"
     ]
   },
-  "homepage": "http://lp.alfacb.org.br/"
+  "homepage": "http://alfacb.org.br/"
 }
