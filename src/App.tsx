@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import InputMask from 'react-input-mask';
 import { useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
-
+import logo from './assets/logo.png';
 import NavBar from './components/NavBar';
 import mobi from './assets/mobi.png';
 import Accordion from './components/Accordion';
@@ -255,16 +255,17 @@ function App() {
           <button onClick={ScrollToTop} className='bg-red-700 rounded-lg text-white uppercase font-extrabold p-3 m-5 my-2 text-xs hover:animate-spin shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50 hover:scale-[1.03] md:p-8 md:text-2xl md:mb-10'>quero proteger meu veículo</button>
         </div>
       </section>
-      <footer className='flex items-center justify-around w-full h-10 bg-[#353535] md:h-14'>
+      <footer className='flex items-center justify-around w-full h-10 bg-[#353535] md:h-20'>
         <div className='flex w-full items-center justify-between'>
           <div className='flex justify-center w-full'>
+            <img src={logo} alt="alfa logo" className='w-20 md:w-36 lg:w-44' />
+          </div>
+          <div className='flex flex-col items-center justify-center w-full'>
             <h2 className=' text-white md:text-base text-[8px]'>CNPJ: 36.117.103/0001-83</h2>
+            <h2 className=' text-white md:text-base text-[8px]'>Telefone: (81) 3771-4938</h2>
           </div>
           <div className='flex justify-center w-full'>
             <h2 className=' text-white md:text-base text-[8px]'>{(new Date().getFullYear())} - Copyright ©</h2>
-          </div>
-          <div className='flex justify-center w-full'>
-            <h2 className=' text-white md:text-base text-[8px]'>(81) 3771-4938</h2>
           </div>    
         </div>
       </footer>
