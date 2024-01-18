@@ -35,6 +35,9 @@ module.exports = {
         bs1: "0px 8px  20px 0px #00214a19",
         lg: "0px 8px 40px 0px #00214a25"
       },
+      borderWidth: {
+        1: '1px'
+    }
     },
   },
   plugins: [

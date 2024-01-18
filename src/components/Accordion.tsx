@@ -21,7 +21,6 @@ const Accordion =  (props: any) => {
                 </div>
             </div>
             <div className="overflow-hidden duration-500 max-h-0 min-h-1 group-[.is-active]:max-h-[500px] md:text-xl md:mt-1">
-                {data.answer} 
             </div>
         </div>
     );

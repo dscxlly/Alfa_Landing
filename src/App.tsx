@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import InputMask from 'react-input-mask';
 import { useNavigate } from 'react-router-dom';
-import logo_color from './assets/logo_color.png';
+import NavBar from './components/NavBar';
 import mobi from './assets/mobi.png';
 import Accordion from './components/Accordion';
 import Component_3 from './assets/Component_3.png';
@@ -85,11 +85,11 @@ function App() {
   const list = ([
     {
       question: "O que é proteção veicular?",
-      answer: "A proteção veicular é mais do que um serviço; é a garantia de tranquilidade para quem está ao volante. Na Alfa, entendemos que proteger seu veículo vai além de um simples contrato. É um compromisso com você em qualquer jornada. Oferecemos coberturas abrangentes assistência 24 horas e a certeza de que, em cada quilômetro, estamos ao seu lado.",
+      answer: "A proteção veicular é mais do que um serviço, é a garantia de tranquilidade para quem está ao volante. Na Alfa, entendemos que proteger seu veículo vai além de um simples contrato. É um compromisso com você em qualquer jornada. Oferecemos coberturas abrangentes, assistência 24 horas e a certeza de que em cada quilômetro estamos ao seu lado.",
     },
     {
       question: "Quem pode se associar a Alfa?",
-      answer: "Para ser associado Alfa basta ser habilitado possui um veiculo seja BICICLETA, CARRO, MOTO OU CAMINHÃO. Não consultamos o Serviço de proteção ao credito(SPC).",
+      answer: "Para ser associado Alfa basta ser habilitado e possui um veículo, seja CARRO, MOTO, CAMINHÃO e BICICLETA. Não consultamos o Serviço de proteção ao credito(SPC).",
     },
     {
       question: "Onde a Alfa atende?",
@@ -97,7 +97,7 @@ function App() {
     },
     {
       question: "Existe pagamento da adesão?",
-      answer: "Na Alfa não temos pagamento de Adesão, no primeiro mês você vai pagar a mensalidades, mais algumas taxas, como taxa de rastreador...",
+      answer: "Na Alfa não temos pagamento de Adesão, no primeiro mês você vai pagar a mensalidade e mais algumas taxas, como taxa de rastreador...",
     },
     {
       question: "Na Alfa tem fidelidade?",
@@ -114,9 +114,9 @@ function App() {
     };
   
     return (
-      <div className='absolute left-1/2 -bottom-8 lg:-bottom-16'>
+      <div className=''>
         <button onClick={scrollToBottom} className=''>
-          <img src={Component_7} alt="Custom Icon" className="h-8 md:h-12 "></img>
+          <img src={Component_7} alt="Custom Icon" className="h-12"></img>
         </button>
       </div>
     );
@@ -131,13 +131,11 @@ function App() {
 
   return (
     <div className='overflow-x-hidden w-full bg-blue flex flex-col font-montserrat items-center'>
-      <header className='bg-white h-8 w-full flex items-center justify-center lg:justify-start md:h-14 lg:h-20'>
-        <div>
-          <img src={logo_color} alt='logo' className='w-32 md:w-48 lg:ml-44 lg:w-60' />
-        </div>
+      <header className='bg-white w-full flex h-20'>
+        <NavBar />
       </header>
       <section className='h-full w-full bg-bg-sm md:bg-bg-mid lg:bg-bg-image bg-cover  '>
-        <div className='flex items-center justify-center lg:justify-start lg:ml-44 h-screen m-2'>
+        <div className='flex flex-col items-center justify-evenly lg:justify-evenly lg:items-start lg:ml-44 h-screen m-2'>
           <div className='backdrop-blur-lg bg-black/10 border-0 rounded-3xl flex flex-col justify-center items-center p-5 w-full md:w-[600px] lg:w-[480px] lg:h-[480px]'>
             <div className=''>
               <h1 className='uppercase text-white text-xl font-extrabold text-center md:text-4xl md:mt-10 lg:text-2xl'>
@@ -195,8 +193,11 @@ function App() {
               </form>
             </div>
           </div>
+          <div className='w-full flex items-center justify-center'>
+            <ScrollDownArrow />
+          </div>
         </div>
-        <ScrollDownArrow />
+        
       </section>
       <section className='w-full h-full bg-white flex flex-col items-center justify-center '>
         <div className='my-10'>
@@ -248,8 +249,18 @@ function App() {
           <button onClick={ScrollToTop} className='bg-red-700 rounded-lg text-white uppercase font-extrabold p-3 m-5 my-2 text-xs hover:animate-spin shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50 hover:scale-[1.03] md:p-8 md:text-2xl md:mb-10'>quero proteger meu veículo</button>
         </div>
       </section>
-      <footer className='flex items-center justify-center w-full h-10 bg-[#353535] md:h-14'>
-        <h2 className='text-white md:text-2xl text-sm'>{(new Date().getFullYear())} - Todos os direitos reservados©</h2>
+      <footer className='flex items-center justify-around w-full h-10 bg-[#353535] md:h-14'>
+        <div className='flex w-full items-center justify-between'>
+          <div className='flex justify-center w-full'>
+            <h2 className=' text-white md:text-base text-[8px]'>CNPJ: 36.117.103/0001-83</h2>
+          </div>
+          <div className='flex justify-center w-full'>
+            <h2 className=' text-white md:text-base text-[8px]'>{(new Date().getFullYear())} - Copyright ©</h2>
+          </div>
+          <div className='flex justify-center w-full'>
+            <h2 className=' text-white md:text-base text-[8px]'>(81) 3771-4938</h2>
+          </div>    
+        </div>
       </footer>
     </div>
   )
